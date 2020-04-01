@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,10 @@
 		04A6D7282496D71A0082CF48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A6D7262496D71A0082CF48 /* Main.storyboard */; };
 		04A6D72A2496D71D0082CF48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04A6D7292496D71D0082CF48 /* Assets.xcassets */; };
 		04A6D72D2496D71D0082CF48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A6D72B2496D71D0082CF48 /* LaunchScreen.storyboard */; };
+		04A6D7A0249AABFB0082CF48 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D79F249AABFB0082CF48 /* HomeController.swift */; };
+		04A6D7A2249AAC120082CF48 /* BottomControlsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D7A1249AAC120082CF48 /* BottomControlsStackView.swift */; };
+		04A6D7A4249AAC1D0082CF48 /* HomeNavigationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D7A3249AAC1D0082CF48 /* HomeNavigationStackView.swift */; };
+		04A6D7A6249AAC3C0082CF48 /* Extensions-2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D7A5249AAC3C0082CF48 /* Extensions-2.swift */; };
 		0B93FDCF7746A74610BC9673 /* Pods_CloneTinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 220DB127C9F64C4B77189E96 /* Pods_CloneTinder.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +27,10 @@
 		04A6D7292496D71D0082CF48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04A6D72C2496D71D0082CF48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04A6D72E2496D71D0082CF48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04A6D79F249AABFB0082CF48 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		04A6D7A1249AAC120082CF48 /* BottomControlsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomControlsStackView.swift; sourceTree = "<group>"; };
+		04A6D7A3249AAC1D0082CF48 /* HomeNavigationStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeNavigationStackView.swift; path = ../../../ArtBookProject/TinderCloneFinal/TinderCloneFinal/View/Home/HomeNavigationStackView.swift; sourceTree = "<group>"; };
+		04A6D7A5249AAC3C0082CF48 /* Extensions-2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extensions-2.swift"; sourceTree = "<group>"; };
 		1B42BC16D0648BA161DB6FF2 /* Pods-CloneTinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloneTinder.debug.xcconfig"; path = "Target Support Files/Pods-CloneTinder/Pods-CloneTinder.debug.xcconfig"; sourceTree = "<group>"; };
 		220DB127C9F64C4B77189E96 /* Pods_CloneTinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CloneTinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A600BB9F8B99BBE9E98BC5A /* Pods-CloneTinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloneTinder.release.xcconfig"; path = "Target Support Files/Pods-CloneTinder/Pods-CloneTinder.release.xcconfig"; sourceTree = "<group>"; };
@@ -80,6 +88,7 @@
 		04A6D7342496D7240082CF48 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				04A6D7A5249AAC3C0082CF48 /* Extensions-2.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -94,6 +103,7 @@
 		04A6D73B2496D7350082CF48 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				04A6D79F249AABFB0082CF48 /* HomeController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -108,6 +118,8 @@
 		04A6D73D2496D7380082CF48 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04A6D7A1249AAC120082CF48 /* BottomControlsStackView.swift */,
+				04A6D7A3249AAC1D0082CF48 /* HomeNavigationStackView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -133,7 +145,6 @@
 				1B42BC16D0648BA161DB6FF2 /* Pods-CloneTinder.debug.xcconfig */,
 				7A600BB9F8B99BBE9E98BC5A /* Pods-CloneTinder.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -254,6 +265,10 @@
 			files = (
 				04A6D7212496D71A0082CF48 /* AppDelegate.swift in Sources */,
 				04A6D7232496D71A0082CF48 /* SceneDelegate.swift in Sources */,
+				04A6D7A4249AAC1D0082CF48 /* HomeNavigationStackView.swift in Sources */,
+				04A6D7A2249AAC120082CF48 /* BottomControlsStackView.swift in Sources */,
+				04A6D7A6249AAC3C0082CF48 /* Extensions-2.swift in Sources */,
+				04A6D7A0249AABFB0082CF48 /* HomeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
