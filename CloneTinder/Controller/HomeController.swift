@@ -67,6 +67,6 @@ extension HomeController: BottomControlsStackViewDelegate {
     func handleRefresh() {
         print("DEBUG: Handle refresh.")
     }
-    
 }
+
 

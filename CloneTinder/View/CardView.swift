@@ -8,6 +8,11 @@
 
 import UIKit
 
+enum SwipeDirection: Int {
+    case left = -1
+    case right = 1
+}
+
 class CardView: UIView {
     // MARK: - Properties
     
@@ -37,6 +42,8 @@ class CardView: UIView {
     init() {
         super.init(frame: .zero)
         backgroundColor = .white
+        
+        configureGestureRecognizer()
         
         layer.cornerRadius = 10
         clipsToBounds = true
@@ -70,14 +77,69 @@ class CardView: UIView {
     @objc func handleShowProfile() {
         print("DEBUG: Handle profile..")
     }
+    
+    @objc func handlePanGesture(sender: UIPanGestureRecognizer) {
+        switch sender.state {
+        case .began:
+            print(".began")
+        case .changed:
+            panCard(sender: sender)
+        case .ended:
+            resetCardPosition(sender: sender)
+        default: break
+        }
+        
+    }
+    
+    @objc func handleChangePhoto(sender: UITapGestureRecognizer) {
+        let location = sender.location(in: nil).x
+        let shouldShowNextPhoto = location > self.frame.width / 2
+        
+    }
 
     
     // MARK: - Helpers
+    
+    func panCard(sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in: nil)
+        let degrees: CGFloat = translation.x / 20
+        let angle = degrees * .pi / 180
+        let rotationalTransform = CGAffineTransform(rotationAngle: angle)
+        self.transform = rotationalTransform.translatedBy(x: translation.x, y: translation.y)
+    }
+    
+    func resetCardPosition(sender: UIPanGestureRecognizer) {
+        let direction: SwipeDirection = sender.translation(in: nil).x > 100 ? .right : .left
+        let shouldDismissCard = abs(sender.translation(in: nil).x) > 100
+        
+        UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.1, options: .curveEaseOut, animations: {
+            
+            if shouldDismissCard {
+                let xTranslation = CGFloat(direction.rawValue) * 1000
+                let offScreenTransform = self.transform.translatedBy(x: xTranslation, y: 0)
+                self.transform = offScreenTransform
+            } else {
+                 self.transform = .identity
+            }
+        }) { (_) in
+            if shouldDismissCard {
+               print("did like")
+            }
+        }
+    }
     
     private func configureGradientLayer() {
         gradientLayer.colors = [UIColor.clear.cgColor,UIColor.black.cgColor]
         gradientLayer.locations = [0.5, 1]
         layer.addSublayer(gradientLayer)
+    }
+    
+    func configureGestureRecognizer() {
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture))
+        addGestureRecognizer(pan)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleChangePhoto))
+        addGestureRecognizer(tap)
     }
     
     
