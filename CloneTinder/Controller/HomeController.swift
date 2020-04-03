@@ -69,4 +69,13 @@ extension HomeController: BottomControlsStackViewDelegate {
     }
 }
 
+    // MARK: - AuthenticationDelegate
+
+extension HomeController: AuthenticationDelegate {
+    func authenticationComplete() {
+        dismiss(animated: true, completion: nil)
+
+    }
+}
+
 
