@@ -27,6 +27,7 @@
 		04A6D7BA249BB1F10082CF48 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D7B9249BB1F10082CF48 /* AuthService.swift */; };
 		04A6D7BC249BB23D0082CF48 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D7BB249BB23D0082CF48 /* Service.swift */; };
 		04A6D7BE249BB25D0082CF48 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D7BD249BB25D0082CF48 /* Constants.swift */; };
+		04A6D7C0249BEA0C0082CF48 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04A6D7BF249BEA0C0082CF48 /* GoogleService-Info.plist */; };
 		0B93FDCF7746A74610BC9673 /* Pods_CloneTinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 220DB127C9F64C4B77189E96 /* Pods_CloneTinder.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		04A6D7B9249BB1F10082CF48 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		04A6D7BB249BB23D0082CF48 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		04A6D7BD249BB25D0082CF48 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		04A6D7BF249BEA0C0082CF48 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1B42BC16D0648BA161DB6FF2 /* Pods-CloneTinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloneTinder.debug.xcconfig"; path = "Target Support Files/Pods-CloneTinder/Pods-CloneTinder.debug.xcconfig"; sourceTree = "<group>"; };
 		220DB127C9F64C4B77189E96 /* Pods_CloneTinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CloneTinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A600BB9F8B99BBE9E98BC5A /* Pods-CloneTinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloneTinder.release.xcconfig"; path = "Target Support Files/Pods-CloneTinder/Pods-CloneTinder.release.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				04A6D7342496D7240082CF48 /* Utils */,
 				04A6D7202496D71A0082CF48 /* AppDelegate.swift */,
 				04A6D7222496D71A0082CF48 /* SceneDelegate.swift */,
+				04A6D7BF249BEA0C0082CF48 /* GoogleService-Info.plist */,
 				04A6D7262496D71A0082CF48 /* Main.storyboard */,
 				04A6D7292496D71D0082CF48 /* Assets.xcassets */,
 				04A6D72B2496D71D0082CF48 /* LaunchScreen.storyboard */,
@@ -242,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04A6D72D2496D71D0082CF48 /* LaunchScreen.storyboard in Resources */,
+				04A6D7C0249BEA0C0082CF48 /* GoogleService-Info.plist in Resources */,
 				04A6D72A2496D71D0082CF48 /* Assets.xcassets in Resources */,
 				04A6D7282496D71A0082CF48 /* Main.storyboard in Resources */,
 			);
