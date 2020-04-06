@@ -2,7 +2,7 @@
 //  AuthService.swift
 //  TinderCloneFinal
 //
-//  Created by Alperen Toksöz on 1.06.2020.
+//  Created by Alperen Toksöz on 4.04.2020.
 //  Copyright © 2020 Alperen Toksöz. All rights reserved.
 //
 

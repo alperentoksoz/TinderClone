@@ -2,7 +2,7 @@
 //  Service.swift
 //  TinderCloneFinal
 //
-//  Created by Alperen Toksöz on 1.04.2020.
+//  Created by Alperen Toksöz on 4.04.2020.
 //  Copyright © 2020 Alperen Toksöz. All rights reserved.
 //
 
@@ -57,6 +57,22 @@ struct Service {
         }
         completion(data)
         }
+    }
+    
+        // MARK: - Saving
+    
+    static func saveUserData(user: User, completion: @escaping(Error?) -> Void) {
+        
+        let data = ["uid": user.uid,
+                    "fullname": user.name,
+                    "imageURLs": user.imageURLs,
+                    "age": user.age,
+                    "bio": user.bio,
+                    "profession": user.profession,
+                    "minSeekingAge": user.minSeekingAge,
+                    "maxSeekingAge": user.maxSeekingAge] as [String : Any]
+        
+        COLLECTION_USERS.document(user.uid).setData(data, completion: completion)
     }
 
     static func uploadImage(image: UIImage, completion: @escaping(String) -> Void) {
