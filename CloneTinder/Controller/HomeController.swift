@@ -68,6 +68,15 @@ class HomeController: UIViewController {
             }
         }
     
+        func logout() {
+            do {
+                try Auth.auth().signOut()
+                presentLoginController()
+            } catch _ {
+                print("Failed to signOut")
+            }
+        }
+    
     // MARK: - Selectors
     
     // MARK: - Helpers
@@ -131,6 +140,20 @@ extension HomeController: BottomControlsStackViewDelegate {
     }
     
     }
+
+    // MARK: - SettingsControllerDelegate
+
+extension HomeController: SettingsControllerDelegate {
+    func settingsControllerWantsToLogout(_ controller: SettingsController) {
+        logout()
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func settingsController(_ controller: SettingsController, wantsToUpdate user: User) {
+        self.user = user
+        controller.dismiss(animated: true, completion: nil)
+    }
+}
     
 
     // MARK: - AuthenticationDelegate

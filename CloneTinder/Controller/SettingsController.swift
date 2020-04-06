@@ -23,6 +23,7 @@ class SettingsController: UITableViewController {
     private var user: User
     
     private lazy var headerView = SettingsHeader(user: user)
+    private let footerView = SettingsFooter()
     private let imagePicker = UIImagePickerController()
     private var imageIndex = 0
     
@@ -92,11 +93,57 @@ class SettingsController: UITableViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(handleDone))
 
         tableView.backgroundColor = .systemGroupedBackground
+        tableView.register(SettingsCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.separatorStyle = .none
         tableView.tableHeaderView = headerView
         headerView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 300)
+        tableView.tableFooterView = footerView
+        
+        footerView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 88)
+        footerView.delegate = self
 
+    }
+}
 
+    // MARK: - UITableViewDataSource
+
+extension SettingsController {
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return SettingsSections.allCases.count
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! SettingsCell
+        
+        guard let section = SettingsSections(rawValue: indexPath.section) else { return cell }
+        let viewModel = SettingsViewModel(user: user, section: section)
+        cell.viewModel = viewModel
+        cell.delegate = self
+    
+        return cell
+    }
+    
+}
+
+    // MARK: - UITableViewDelegate
+
+extension SettingsController {
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 32
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard let section = SettingsSections(rawValue: section) else { return nil}
+        return section.description
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard let section = SettingsSections(rawValue: indexPath.section) else { return 0 }
+        
+        return section == .ageRange ? 96 : 44
     }
 }
 
@@ -121,5 +168,40 @@ extension SettingsController: UIImagePickerControllerDelegate & UINavigationCont
         setHeaderImage(selectedImage)
         
         dismiss(animated: true, completion: nil)
+    }
+}
+
+    // MARK: - SettingsCellDelegate
+
+extension SettingsController: SettingsCellDelegate {
+    func settingsCell(_ cell: SettingsCell, wantsToUpdateAgeRangeWith sender: UISlider) {
+        if sender == cell.minAgeSlider {
+            user.minSeekingAge = Int(sender.value)
+        } else {
+            user.maxSeekingAge = Int(sender.value)
+        }
+    }
+    
+    func settingsCell(_ cell: SettingsCell, wantsToUpdateUserWith value: String, for section: SettingsSections) {
+        switch section {
+
+        case .name:
+            user.name = value
+        case .proffession:
+            user.profession = value
+        case .age:
+            user.age = Int(value) ?? user.age
+        case .bio:
+            user.bio = value
+        case .ageRange:
+            break
+        }
+    }
+
+}
+
+extension SettingsController: SettingsFooterDelegate {
+    func handleLogout() {
+        delegate?.settingsControllerWantsToLogout(self)
     }
 }
