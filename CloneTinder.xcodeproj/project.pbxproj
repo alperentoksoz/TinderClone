@@ -36,6 +36,7 @@
 		04A6D7D7249BF1FC0082CF48 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D7D6249BF1FC0082CF48 /* ProfileController.swift */; };
 		04A6D7D9249BF2070082CF48 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D7D8249BF2070082CF48 /* ProfileCell.swift */; };
 		04A6D7DB249BF2130082CF48 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D7DA249BF2130082CF48 /* ProfileViewModel.swift */; };
+		04A6D7DD249BF3A40082CF48 /* SegmentedBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D7DC249BF3A40082CF48 /* SegmentedBarView.swift */; };
 		0B93FDCF7746A74610BC9673 /* Pods_CloneTinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 220DB127C9F64C4B77189E96 /* Pods_CloneTinder.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		04A6D7D6249BF1FC0082CF48 /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		04A6D7D8249BF2070082CF48 /* ProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		04A6D7DA249BF2130082CF48 /* ProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		04A6D7DC249BF3A40082CF48 /* SegmentedBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedBarView.swift; sourceTree = "<group>"; };
 		1B42BC16D0648BA161DB6FF2 /* Pods-CloneTinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloneTinder.debug.xcconfig"; path = "Target Support Files/Pods-CloneTinder/Pods-CloneTinder.debug.xcconfig"; sourceTree = "<group>"; };
 		220DB127C9F64C4B77189E96 /* Pods_CloneTinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CloneTinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A600BB9F8B99BBE9E98BC5A /* Pods-CloneTinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloneTinder.release.xcconfig"; path = "Target Support Files/Pods-CloneTinder/Pods-CloneTinder.release.xcconfig"; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				04A6D7C1249BEAFA0082CF48 /* Settings */,
 				04A6D7A7249AB3980082CF48 /* CardView.swift */,
 				04A6D7D8249BF2070082CF48 /* ProfileCell.swift */,
+				04A6D7DC249BF3A40082CF48 /* SegmentedBarView.swift */,
 				04A6D7A1249AAC120082CF48 /* BottomControlsStackView.swift */,
 				04A6D7A3249AAC1D0082CF48 /* HomeNavigationStackView.swift */,
 			);
@@ -333,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04A6D7B6249AD9C00082CF48 /* CustomTextField.swift in Sources */,
+				04A6D7DD249BF3A40082CF48 /* SegmentedBarView.swift in Sources */,
 				04A6D7BE249BB25D0082CF48 /* Constants.swift in Sources */,
 				04A6D7B8249AD9C50082CF48 /* AuthButton.swift in Sources */,
 				04A6D7D1249BF03C0082CF48 /* SettingsFooter.swift in Sources */,

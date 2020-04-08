@@ -2,7 +2,7 @@
 //  ProfileController.swift
 //  TinderCloneFinal
 //
-//  Created by Alperen Toksöz on 7.04.2020.
+//  Created by Alperen Toksöz on 4.06.2020.
 //  Copyright © 2020 Alperen Toksöz. All rights reserved.
 //
 
@@ -23,6 +23,8 @@ class ProfileController: UIViewController {
     weak var delegate: ProfileControllerDelegate?
     
     private lazy var viewModel = ProfileViewModel(user: user)
+    
+    private lazy var barStackView = SegmentedBarView(numberOfSegments: viewModel.imageURLs.count)
     
     private lazy var collectionView: UICollectionView = {
         let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.width + 100)
@@ -128,6 +130,12 @@ class ProfileController: UIViewController {
     
     // MARK: - Helpers
     
+    func configureBarStackView() {
+        view.addSubview(barStackView)
+        barStackView.anchor(top: view.topAnchor,left: view.leftAnchor,right: view.rightAnchor, paddingTop: 56, paddingLeft: 8, paddingRight: 8, height: 4)
+
+    }
+    
     func loadUserData() {
         infoLabel.attributedText = viewModel.userDetailsAttributedString
         professionLabel.text = viewModel.profession
@@ -156,7 +164,7 @@ class ProfileController: UIViewController {
         
         
         configureBottomControls()
-     
+        configureBarStackView()
     }
     
     func configureBottomControls() {
@@ -192,6 +200,13 @@ extension ProfileController: UICollectionViewDataSource {
         
     }
     
+}
+
+extension ProfileController: UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        barStackView.setHightlighted(index: indexPath.row)
+    }
 }
 
 extension ProfileController: UICollectionViewDelegateFlowLayout {
