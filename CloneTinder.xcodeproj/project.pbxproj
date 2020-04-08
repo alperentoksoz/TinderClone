@@ -33,6 +33,9 @@
 		04A6D7CF249BF0370082CF48 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D7CE249BF0370082CF48 /* SettingsCell.swift */; };
 		04A6D7D1249BF03C0082CF48 /* SettingsFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D7D0249BF03C0082CF48 /* SettingsFooter.swift */; };
 		04A6D7D5249BF11E0082CF48 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D7D4249BF11E0082CF48 /* SettingsViewModel.swift */; };
+		04A6D7D7249BF1FC0082CF48 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D7D6249BF1FC0082CF48 /* ProfileController.swift */; };
+		04A6D7D9249BF2070082CF48 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D7D8249BF2070082CF48 /* ProfileCell.swift */; };
+		04A6D7DB249BF2130082CF48 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D7DA249BF2130082CF48 /* ProfileViewModel.swift */; };
 		0B93FDCF7746A74610BC9673 /* Pods_CloneTinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 220DB127C9F64C4B77189E96 /* Pods_CloneTinder.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +68,9 @@
 		04A6D7CE249BF0370082CF48 /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsCell.swift; path = ../../../../ArtBookProject/TinderCloneFinal/TinderCloneFinal/View/Settings/SettingsCell.swift; sourceTree = "<group>"; };
 		04A6D7D0249BF03C0082CF48 /* SettingsFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsFooter.swift; path = ../../../../ArtBookProject/TinderCloneFinal/TinderCloneFinal/View/Settings/SettingsFooter.swift; sourceTree = "<group>"; };
 		04A6D7D4249BF11E0082CF48 /* SettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewModel.swift; path = ../../../ArtBookProject/TinderCloneFinal/TinderCloneFinal/ViewModel/SettingsViewModel.swift; sourceTree = "<group>"; };
+		04A6D7D6249BF1FC0082CF48 /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		04A6D7D8249BF2070082CF48 /* ProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		04A6D7DA249BF2130082CF48 /* ProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		1B42BC16D0648BA161DB6FF2 /* Pods-CloneTinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloneTinder.debug.xcconfig"; path = "Target Support Files/Pods-CloneTinder/Pods-CloneTinder.debug.xcconfig"; sourceTree = "<group>"; };
 		220DB127C9F64C4B77189E96 /* Pods_CloneTinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CloneTinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A600BB9F8B99BBE9E98BC5A /* Pods-CloneTinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloneTinder.release.xcconfig"; path = "Target Support Files/Pods-CloneTinder/Pods-CloneTinder.release.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +151,7 @@
 			children = (
 				04A6D7AF249AD98A0082CF48 /* LoginController.swift */,
 				04A6D7B1249AD98D0082CF48 /* RegistrationController.swift */,
+				04A6D7D6249BF1FC0082CF48 /* ProfileController.swift */,
 				04A6D79F249AABFB0082CF48 /* HomeController.swift */,
 				04A6D7C8249BEB150082CF48 /* SettingsController.swift */,
 			);
@@ -156,6 +163,7 @@
 			children = (
 				04A6D7B3249AD9980082CF48 /* AuthenticationViewModel.swift */,
 				04A6D7D4249BF11E0082CF48 /* SettingsViewModel.swift */,
+				04A6D7DA249BF2130082CF48 /* ProfileViewModel.swift */,
 				04A6D7A9249AD8F90082CF48 /* CardViewModel.swift */,
 			);
 			path = ViewModel;
@@ -166,6 +174,7 @@
 			children = (
 				04A6D7C1249BEAFA0082CF48 /* Settings */,
 				04A6D7A7249AB3980082CF48 /* CardView.swift */,
+				04A6D7D8249BF2070082CF48 /* ProfileCell.swift */,
 				04A6D7A1249AAC120082CF48 /* BottomControlsStackView.swift */,
 				04A6D7A3249AAC1D0082CF48 /* HomeNavigationStackView.swift */,
 			);
@@ -332,10 +341,12 @@
 				04A6D7A8249AB3980082CF48 /* CardView.swift in Sources */,
 				04A6D7212496D71A0082CF48 /* AppDelegate.swift in Sources */,
 				04A6D7232496D71A0082CF48 /* SceneDelegate.swift in Sources */,
+				04A6D7D7249BF1FC0082CF48 /* ProfileController.swift in Sources */,
 				04A6D7A4249AAC1D0082CF48 /* HomeNavigationStackView.swift in Sources */,
 				04A6D7AA249AD8F90082CF48 /* CardViewModel.swift in Sources */,
 				04A6D7AC249AD9040082CF48 /* User.swift in Sources */,
 				04A6D7CD249BEE400082CF48 /* SettingsHeader.swift in Sources */,
+				04A6D7DB249BF2130082CF48 /* ProfileViewModel.swift in Sources */,
 				04A6D7BC249BB23D0082CF48 /* Service.swift in Sources */,
 				04A6D7B2249AD98D0082CF48 /* RegistrationController.swift in Sources */,
 				04A6D7CF249BF0370082CF48 /* SettingsCell.swift in Sources */,
@@ -343,6 +354,7 @@
 				04A6D7A6249AAC3C0082CF48 /* Extensions-2.swift in Sources */,
 				04A6D7BA249BB1F10082CF48 /* AuthService.swift in Sources */,
 				04A6D7D5249BF11E0082CF48 /* SettingsViewModel.swift in Sources */,
+				04A6D7D9249BF2070082CF48 /* ProfileCell.swift in Sources */,
 				04A6D7A0249AABFB0082CF48 /* HomeController.swift in Sources */,
 				04A6D7B0249AD98A0082CF48 /* LoginController.swift in Sources */,
 			);

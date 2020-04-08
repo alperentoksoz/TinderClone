@@ -154,6 +154,19 @@ extension HomeController: SettingsControllerDelegate {
         controller.dismiss(animated: true, completion: nil)
     }
 }
+
+    // MARK: - ProfileControllerDelegate
+
+extension HomeController: ProfileControllerDelegate {
+    func profileController(_ controller: ProfileController, didLikeUser user: User) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func profileController(_ controller: ProfileController, didDislikeUser user: User) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+}
     
 
     // MARK: - AuthenticationDelegate
