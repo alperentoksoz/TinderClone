@@ -77,6 +77,13 @@ class HomeController: UIViewController {
             }
         }
     
+        func saveSwipeAndCheckForMatch(forUser user: User, didLike: Bool) {
+            Service.saveSwipe(forUser: user, isLike: didLike) { (error) in
+                self.topCardView = self.cardViews.last
+                
+            }
+        }
+    
     // MARK: - Selectors
     
     // MARK: - Helpers
@@ -120,39 +127,70 @@ class HomeController: UIViewController {
         }
     }
     
+    func perfomSwipeAnimation(shouldLike: Bool) {
+        let translation: CGFloat = shouldLike ? 700 : -700
+        
+        UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.1, options: .curveEaseOut, animations: {
+            self.topCardView?.frame = CGRect(x: translation, y: 0,
+                                             width: (self.topCardView?.frame.width)!, height: (self.topCardView?.frame.height)!)
+        }) { (_) in
+            self.topCardView?.removeFromSuperview()
+            guard !self.cardViews.isEmpty else { return }
+            self.cardViews.remove(at: self.cardViews.count - 1)
+            self.topCardView = self.cardViews.last
+        }
+    }
+    
+}
+
+   // MARK: - CardViewDelegate
+
+extension HomeController: CardViewDelegate {
+    func cardView(_ view: CardView, didLikeUser: Bool) {
+        view.removeFromSuperview() 
+        self.cardViews.removeAll(where: { view == $0 })
+
+        guard let user = topCardView?.viewModel.user else { return }
+        saveSwipeAndCheckForMatch(forUser: user, didLike: didLikeUser)
+
+        self.topCardView = cardViews.last
+    }
+    
+    func cardView(_ view: CardView, wantsToShowProfileFor user: User) {
+        let controller = ProfileController(user: user)
+        controller.delegate = self
+        controller.modalPresentationStyle = .fullScreen
+        present(controller,animated: true,completion: nil)
+    }
 }
     
-    
+
     
    // MARK: - BottomControlsStackViewDelegate
 
 extension HomeController: BottomControlsStackViewDelegate {
     func handleLike() {
-         print("DEBUG: Handle like.")
+        guard let topCard = topCardView else { return }
+        
+        perfomSwipeAnimation(shouldLike: true)
+        saveSwipeAndCheckForMatch(forUser: topCard.viewModel.user, didLike: true)
     }
     
     func handleDislike() {
-        print("DEBUG: Handle dislike.")
+        guard let topCard = topCardView else { return }
+        
+        perfomSwipeAnimation(shouldLike: false)
+        Service.saveSwipe(forUser: topCard.viewModel.user, isLike: false, completion: nil)
     }
     
     func handleRefresh() {
-        print("DEBUG: Handle refresh.")
+        guard let user = self.user else { return }
+        
+        Service.fetchUsers(forCurrentUser: user) { (users) in
+            self.cardViewModels = users.map( { CardViewModel(user:  $0) })
+        }
     }
     
-    }
-
-    // MARK: - SettingsControllerDelegate
-
-extension HomeController: SettingsControllerDelegate {
-    func settingsControllerWantsToLogout(_ controller: SettingsController) {
-        logout()
-        controller.dismiss(animated: true, completion: nil)
-    }
-    
-    func settingsController(_ controller: SettingsController, wantsToUpdate user: User) {
-        self.user = user
-        controller.dismiss(animated: true, completion: nil)
-    }
 }
 
     // MARK: - ProfileControllerDelegate

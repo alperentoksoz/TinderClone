@@ -74,6 +74,27 @@ struct Service {
         
         COLLECTION_USERS.document(user.uid).setData(data, completion: completion)
     }
+    
+    static func saveSwipe(forUser user: User, isLike: Bool, completion: ((Error?) -> Void )?) {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        
+        COLLECTION_SWIPES.document(uid).getDocument { (snapshot, error) in
+            let data = [user.uid : isLike]
+            
+            if snapshot?.exists == true {
+                COLLECTION_SWIPES.document(uid).updateData(data)
+            } else {
+                COLLECTION_SWIPES.document(uid).setData(data, completion: completion)
+            }
+        }
+    }
+
+    
+    static func uploadMatch(currentUser: User, matchedUser: User) {
+        guard let profileImageUrl = matchedUser.imageURLs.first else { return }
+        guard let currentUserProfileImageUrl = currentUser.imageURLs.first else { return }
+        
+    }
 
     static func uploadImage(image: UIImage, completion: @escaping(String) -> Void) {
         guard let imageData = image.jpegData(compressionQuality: 0.5) else { return }
