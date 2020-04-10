@@ -8,10 +8,17 @@
 
 import UIKit
 
+protocol MatchViewDelegate: class {
+    func matchView(_ view: MatchView, wantsToSendMessageTo user: User)
+}
+
 class MatchView: UIView {
     
      // MARK: - Properties
-
+    
+    private let viewModel: MatchViewViewModel
+    weak var delegate: MatchViewDelegate?
+    
     private let matchImageView: UIImageView = {
         let iv = UIImageView(image: #imageLiteral(resourceName: "itsamatch"))
         iv.contentMode = .scaleAspectFill
@@ -96,7 +103,7 @@ class MatchView: UIView {
     // MARK: - Selectors
     
     @objc func didTapSendMessage() {
-        print("send message")
+        delegate?.matchView(self, wantsToSendMessageTo: viewModel.matchedUser)
     }
     
     @objc func didTapKeepSwiping() {

@@ -81,6 +81,15 @@ class HomeController: UIViewController {
             Service.saveSwipe(forUser: user, isLike: didLike) { (error) in
                 self.topCardView = self.cardViews.last
                 
+                guard didLike == true else { return }
+                
+                Service.checkIfMatchExists(forUser: user) { (didMatch) in
+                    self.presentMatchView(forUser: user)
+            
+                    guard let currentUser = self.user else { return }
+                    
+                    Service.uploadMatch(currentUser: currentUser, matchedUser: user)
+                }
             }
         }
     
@@ -214,4 +223,14 @@ extension HomeController: AuthenticationDelegate {
         dismiss(animated: true, completion: nil)
         fetchCurrentUserAndCards()
     }
+}
+
+    // MARK: - MatchViewDelegate
+
+extension HomeController: MatchViewDelegate {
+    func matchView(_ view: MatchView, wantsToSendMessageTo user: User) {
+        print("DEBUG: Show messages for user \(user.name)")
+    }
+    
+    
 }

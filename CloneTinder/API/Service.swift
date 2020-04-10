@@ -88,12 +88,34 @@ struct Service {
             }
         }
     }
+    
+    static func checkIfMatchExists(forUser user: User, completion: @escaping(Bool) -> Void) {
+        guard let currentUid = Auth.auth().currentUser?.uid else { return }
+        
+        COLLECTION_SWIPES.document(user.uid).getDocument { (snapshot, error) in
+            guard let data = snapshot?.data() else { return }
+            guard let didMatch = data[currentUid] as? Bool else { return }
+            
+            completion(didMatch)
+        }
+    }
 
     
     static func uploadMatch(currentUser: User, matchedUser: User) {
         guard let profileImageUrl = matchedUser.imageURLs.first else { return }
         guard let currentUserProfileImageUrl = currentUser.imageURLs.first else { return }
         
+        let matchedUserdata = ["uid": matchedUser.uid,
+                    "name": matchedUser.name,
+                    "profileImageUrl": profileImageUrl]
+        
+        COLLECTION_MATCHES_MESSAGES.document(currentUser.uid).collection("matches").document(matchedUser.uid).setData(matchedUserdata)
+        
+        let currentUserData = ["uid": currentUser.uid,
+                    "name": currentUser.name,
+                    "profileImageUrl": currentUserProfileImageUrl]
+        
+        COLLECTION_MATCHES_MESSAGES.document(matchedUser.uid).collection("matches").document(currentUser.uid).setData(currentUserData)
     }
 
     static func uploadImage(image: UIImage, completion: @escaping(String) -> Void) {
