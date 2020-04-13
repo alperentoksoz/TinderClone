@@ -14,13 +14,10 @@
 		04A6D72D2496D71D0082CF48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A6D72B2496D71D0082CF48 /* LaunchScreen.storyboard */; };
 		04A6D7A0249AABFB0082CF48 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D79F249AABFB0082CF48 /* HomeController.swift */; };
 		04A6D7A2249AAC120082CF48 /* BottomControlsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D7A1249AAC120082CF48 /* BottomControlsStackView.swift */; };
-		04A6D7A4249AAC1D0082CF48 /* HomeNavigationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D7A3249AAC1D0082CF48 /* HomeNavigationStackView.swift */; };
 		04A6D7A6249AAC3C0082CF48 /* Extensions-2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D7A5249AAC3C0082CF48 /* Extensions-2.swift */; };
 		04A6D7A8249AB3980082CF48 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D7A7249AB3980082CF48 /* CardView.swift */; };
 		04A6D7AA249AD8F90082CF48 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D7A9249AD8F90082CF48 /* CardViewModel.swift */; };
 		04A6D7AC249AD9040082CF48 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D7AB249AD9040082CF48 /* User.swift */; };
-		04A6D7B0249AD98A0082CF48 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D7AF249AD98A0082CF48 /* LoginController.swift */; };
-		04A6D7B2249AD98D0082CF48 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D7B1249AD98D0082CF48 /* RegistrationController.swift */; };
 		04A6D7B4249AD9980082CF48 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D7B3249AD9980082CF48 /* AuthenticationViewModel.swift */; };
 		04A6D7B6249AD9C00082CF48 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D7B5249AD9C00082CF48 /* CustomTextField.swift */; };
 		04A6D7B8249AD9C50082CF48 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D7B7249AD9C50082CF48 /* AuthButton.swift */; };
@@ -42,6 +39,9 @@
 		04A6D7E5249C2D790082CF48 /* KeepSwipingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D7E4249C2D790082CF48 /* KeepSwipingButton.swift */; };
 		04F576F3249C2ED90075612A /* MatchCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F576F2249C2ED90075612A /* MatchCellViewModel.swift */; };
 		04F576F5249C2EDF0075612A /* MatchCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F576F4249C2EDF0075612A /* MatchCellViewModel.swift */; };
+		04F576F7249C30840075612A /* MessagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F576F6249C30840075612A /* MessagesController.swift */; };
+		04F576F9249C30900075612A /* MatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F576F8249C30900075612A /* MatchCell.swift */; };
+		04F576FB249C309A0075612A /* MatchHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F576FA249C309A0075612A /* MatchHeader.swift */; };
 		0B93FDCF7746A74610BC9673 /* Pods_CloneTinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 220DB127C9F64C4B77189E96 /* Pods_CloneTinder.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,13 +55,10 @@
 		04A6D72E2496D71D0082CF48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04A6D79F249AABFB0082CF48 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		04A6D7A1249AAC120082CF48 /* BottomControlsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomControlsStackView.swift; sourceTree = "<group>"; };
-		04A6D7A3249AAC1D0082CF48 /* HomeNavigationStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeNavigationStackView.swift; path = ../../../ArtBookProject/TinderCloneFinal/TinderCloneFinal/View/Home/HomeNavigationStackView.swift; sourceTree = "<group>"; };
 		04A6D7A5249AAC3C0082CF48 /* Extensions-2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extensions-2.swift"; sourceTree = "<group>"; };
 		04A6D7A7249AB3980082CF48 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		04A6D7A9249AD8F90082CF48 /* CardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		04A6D7AB249AD9040082CF48 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		04A6D7AF249AD98A0082CF48 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginController.swift; path = ../../../ArtBookProject/TinderCloneFinal/TinderCloneFinal/Controller/Authentication/LoginController.swift; sourceTree = "<group>"; };
-		04A6D7B1249AD98D0082CF48 /* RegistrationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationController.swift; path = ../../../ArtBookProject/TinderCloneFinal/TinderCloneFinal/Controller/Authentication/RegistrationController.swift; sourceTree = "<group>"; };
 		04A6D7B3249AD9980082CF48 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		04A6D7B5249AD9C00082CF48 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		04A6D7B7249AD9C50082CF48 /* AuthButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
@@ -83,6 +80,11 @@
 		04A6D7E4249C2D790082CF48 /* KeepSwipingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeepSwipingButton.swift; sourceTree = "<group>"; };
 		04F576F2249C2ED90075612A /* MatchCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchCellViewModel.swift; sourceTree = "<group>"; };
 		04F576F4249C2EDF0075612A /* MatchCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MatchCellViewModel.swift; path = ../../../ArtBookProject/TinderCloneFinal/TinderCloneFinal/ViewModel/MatchCellViewModel.swift; sourceTree = "<group>"; };
+		04F576F6249C30840075612A /* MessagesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesController.swift; sourceTree = "<group>"; };
+		04F576F8249C30900075612A /* MatchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchCell.swift; sourceTree = "<group>"; };
+		04F576FA249C309A0075612A /* MatchHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchHeader.swift; sourceTree = "<group>"; };
+		04F57701249C30FD0075612A /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		04F57702249C31000075612A /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		1B42BC16D0648BA161DB6FF2 /* Pods-CloneTinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloneTinder.debug.xcconfig"; path = "Target Support Files/Pods-CloneTinder/Pods-CloneTinder.debug.xcconfig"; sourceTree = "<group>"; };
 		220DB127C9F64C4B77189E96 /* Pods_CloneTinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CloneTinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A600BB9F8B99BBE9E98BC5A /* Pods-CloneTinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloneTinder.release.xcconfig"; path = "Target Support Files/Pods-CloneTinder/Pods-CloneTinder.release.xcconfig"; sourceTree = "<group>"; };
@@ -161,10 +163,10 @@
 		04A6D73B2496D7350082CF48 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				04A6D7AF249AD98A0082CF48 /* LoginController.swift */,
-				04A6D7B1249AD98D0082CF48 /* RegistrationController.swift */,
+				04F576FF249C30E40075612A /* Auth */,
 				04A6D7D6249BF1FC0082CF48 /* ProfileController.swift */,
 				04A6D79F249AABFB0082CF48 /* HomeController.swift */,
+				04F576F6249C30840075612A /* MessagesController.swift */,
 				04A6D7C8249BEB150082CF48 /* SettingsController.swift */,
 			);
 			path = Controller;
@@ -173,9 +175,9 @@
 		04A6D73C2496D7370082CF48 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				04F576FE249C30D80075612A /* Authentication */,
 				04F576F2249C2ED90075612A /* MatchCellViewModel.swift */,
 				04F576F4249C2EDF0075612A /* MatchCellViewModel.swift */,
-				04A6D7B3249AD9980082CF48 /* AuthenticationViewModel.swift */,
 				04A6D7D4249BF11E0082CF48 /* SettingsViewModel.swift */,
 				04A6D7DA249BF2130082CF48 /* ProfileViewModel.swift */,
 				04A6D7A9249AD8F90082CF48 /* CardViewModel.swift */,
@@ -186,12 +188,11 @@
 		04A6D73D2496D7380082CF48 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04F576FD249C30CF0075612A /* Profile */,
+				04F576FC249C30A10075612A /* Messages */,
 				04A6D7E1249C2D6C0082CF48 /* Match */,
 				04A6D7DE249C2CFF0082CF48 /* Home */,
 				04A6D7C1249BEAFA0082CF48 /* Settings */,
-				04A6D7D8249BF2070082CF48 /* ProfileCell.swift */,
-				04A6D7DC249BF3A40082CF48 /* SegmentedBarView.swift */,
-				04A6D7A3249AAC1D0082CF48 /* HomeNavigationStackView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -231,6 +232,41 @@
 				04A6D7E4249C2D790082CF48 /* KeepSwipingButton.swift */,
 			);
 			path = Match;
+			sourceTree = "<group>";
+		};
+		04F576FC249C30A10075612A /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				04F576F8249C30900075612A /* MatchCell.swift */,
+				04F576FA249C309A0075612A /* MatchHeader.swift */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		04F576FD249C30CF0075612A /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				04A6D7D8249BF2070082CF48 /* ProfileCell.swift */,
+				04A6D7DC249BF3A40082CF48 /* SegmentedBarView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		04F576FE249C30D80075612A /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				04A6D7B3249AD9980082CF48 /* AuthenticationViewModel.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		04F576FF249C30E40075612A /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				04F57701249C30FD0075612A /* LoginController.swift */,
+				04F57702249C31000075612A /* RegistrationController.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		EC9A2240AD942D56DA210833 /* Frameworks */ = {
@@ -378,13 +414,13 @@
 				04A6D7212496D71A0082CF48 /* AppDelegate.swift in Sources */,
 				04A6D7232496D71A0082CF48 /* SceneDelegate.swift in Sources */,
 				04A6D7D7249BF1FC0082CF48 /* ProfileController.swift in Sources */,
-				04A6D7A4249AAC1D0082CF48 /* HomeNavigationStackView.swift in Sources */,
 				04A6D7AA249AD8F90082CF48 /* CardViewModel.swift in Sources */,
 				04A6D7AC249AD9040082CF48 /* User.swift in Sources */,
+				04F576F7249C30840075612A /* MessagesController.swift in Sources */,
 				04A6D7CD249BEE400082CF48 /* SettingsHeader.swift in Sources */,
 				04A6D7DB249BF2130082CF48 /* ProfileViewModel.swift in Sources */,
+				04F576FB249C309A0075612A /* MatchHeader.swift in Sources */,
 				04A6D7BC249BB23D0082CF48 /* Service.swift in Sources */,
-				04A6D7B2249AD98D0082CF48 /* RegistrationController.swift in Sources */,
 				04A6D7E3249C2D730082CF48 /* MatchView.swift in Sources */,
 				04A6D7CF249BF0370082CF48 /* SettingsCell.swift in Sources */,
 				04A6D7A2249AAC120082CF48 /* BottomControlsStackView.swift in Sources */,
@@ -395,7 +431,7 @@
 				04A6D7D9249BF2070082CF48 /* ProfileCell.swift in Sources */,
 				04A6D7A0249AABFB0082CF48 /* HomeController.swift in Sources */,
 				04A6D7E0249C2D0A0082CF48 /* HomeNavigationStackView.swift in Sources */,
-				04A6D7B0249AD98A0082CF48 /* LoginController.swift in Sources */,
+				04F576F9249C30900075612A /* MatchCell.swift in Sources */,
 				04F576F5249C2EDF0075612A /* MatchCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
