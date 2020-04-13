@@ -13,7 +13,7 @@ class HomeController: UIViewController {
     
     // MARK: - Properties
     
-    private var user: User?
+    private var  user: User?
     
     private var cardViewModels = [CardViewModel]() {
         didSet {
@@ -43,55 +43,60 @@ class HomeController: UIViewController {
     }
     
     // MARK: - API
-        
-        func fetchUsers(forCurrentUser user: User) {
-            Service.fetchUsers(forCurrentUser: user) { (users) in
-               
-            self.cardViewModels = users.map({ CardViewModel(user: $0)})
-
-            }
-        }
-        
-        func fetchCurrentUserAndCards() {
-            guard let uid = Auth.auth().currentUser?.uid else { return }
-            
-            Service.fetchUser(withUid: uid) { (user) in
-                 print("DEBUG: \(user.name)")
-                self.user = user
-                self.fetchUsers(forCurrentUser: user)
-            }
-        }
-        
-        func checkIfUserIsLoggedIn() {
-            if Auth.auth().currentUser == nil {
-                presentLoginController()
-            }
-        }
     
-        func logout() {
-            do {
-                try Auth.auth().signOut()
-                presentLoginController()
-            } catch _ {
-                print("Failed to signOut")
-            }
-        }
-    
-        func saveSwipeAndCheckForMatch(forUser user: User, didLike: Bool) {
-            Service.saveSwipe(forUser: user, isLike: didLike) { (error) in
-                self.topCardView = self.cardViews.last
-                
-                guard didLike == true else { return }
-                
-                Service.checkIfMatchExists(forUser: user) { (didMatch) in
-                    self.presentMatchView(forUser: user)
+    func fetchUsers(forCurrentUser user: User) {
+        Service.fetchUsers(forCurrentUser: user) { (users) in
+           
+        self.cardViewModels = users.map({ CardViewModel(user: $0)})
             
-                    guard let currentUser = self.user else { return }
-                    
-                    Service.uploadMatch(currentUser: currentUser, matchedUser: user)
-                }
+//            Same Code
+//            users.forEach { (user) in
+//                let viewModel = CardViewModel(user: user )
+//                viewModels.append(viewModel)
+//            }
+        }
+    }
+    
+    func fetchCurrentUserAndCards() {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        
+        Service.fetchUser(withUid: uid) { (user) in
+             print("DEBUG: \(user.name)")
+            self.user = user
+            self.fetchUsers(forCurrentUser: user)
+        }
+    }
+    
+    func checkIfUserIsLoggedIn() {
+        if Auth.auth().currentUser == nil {
+            presentLoginController()
+        }
+    }
+    
+    func logout() {
+        do {
+            try Auth.auth().signOut()
+            presentLoginController()
+        } catch _ {
+            print("Failed to signOut")
+        }
+    }
+    
+    func saveSwipeAndCheckForMatch(forUser user: User, didLike: Bool) {
+        Service.saveSwipe(forUser: user, isLike: didLike) { (error) in
+            self.topCardView = self.cardViews.last
+            
+            guard didLike == true else { return }
+            
+            Service.checkIfMatchExists(forUser: user) { (didMatch) in
+                self.presentMatchView(forUser: user)
+        
+                guard let currentUser = self.user else { return }
+                
+                Service.uploadMatch(currentUser: currentUser, matchedUser: user)
             }
         }
+    }
     
     // MARK: - Selectors
     
@@ -100,6 +105,7 @@ class HomeController: UIViewController {
     func configureCards() {
         cardViewModels.forEach { (cardViewModel) in
             let cardView = CardView(viewModel: cardViewModel)
+            cardView.delegate = self
             deckView.addSubview(cardView)
             cardView.fillSuperview()
         }
@@ -108,9 +114,11 @@ class HomeController: UIViewController {
         topCardView = cardViews.last
     }
     
-    
     func configureUI() {
         view.backgroundColor = .white
+        
+        topStack.delegate = self
+        bottomStack.delegate = self
         
         let stack = UIStackView(arrangedSubviews: [topStack,deckView,bottomStack])
         stack.axis = .vertical
@@ -125,7 +133,6 @@ class HomeController: UIViewController {
 
     }
     
-    
     func presentLoginController() {
         DispatchQueue.main.async {
             let controller = LoginController()
@@ -134,6 +141,15 @@ class HomeController: UIViewController {
             nav.modalPresentationStyle = .fullScreen
             self.present(nav,animated: true,completion: nil)
         }
+    }
+    
+    func presentMatchView(forUser user: User) {
+        guard let currentUser = self.user else { return }
+        let viewModel = MatchViewViewModel(currentUser: currentUser, matchedUser: user)
+        let matchView = MatchView(viewModel: viewModel)
+        matchView.delegate = self
+        view.addSubview(matchView)
+        matchView.fillSuperview()
     }
     
     func perfomSwipeAnimation(shouldLike: Bool) {
@@ -149,14 +165,49 @@ class HomeController: UIViewController {
             self.topCardView = self.cardViews.last
         }
     }
+}
+
+    // MARK: - HomeNavigationStackViewDelegate
+
+extension HomeController: HomeNavigationStackViewDelegate {
+    func showSettings() {
+        guard let user = self.user else { return }
+        let controller = SettingsController(user: user)
+        controller.delegate = self
+        let nav = UINavigationController(rootViewController: controller)
+        nav.modalPresentationStyle = .fullScreen
+        present(nav,animated: true,completion: nil)
+    }
     
+    func showMessages() {
+        guard let user = user else { return }
+        let controller = MessagesController(user: user)
+        let nav = UINavigationController(rootViewController: controller)
+        nav.modalPresentationStyle = .fullScreen
+        present(nav,animated: true,completion: nil)
+    }
+
+}
+
+    // MARK: - SettingsControllerDelegate
+
+extension HomeController: SettingsControllerDelegate {
+    func settingsControllerWantsToLogout(_ controller: SettingsController) {
+        logout()
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func settingsController(_ controller: SettingsController, wantsToUpdate user: User) {
+        self.user = user
+        controller.dismiss(animated: true, completion: nil)
+    }
 }
 
    // MARK: - CardViewDelegate
 
 extension HomeController: CardViewDelegate {
     func cardView(_ view: CardView, didLikeUser: Bool) {
-        view.removeFromSuperview() 
+        view.removeFromSuperview() // Cardview içinde sadece animasyon ile farklı yere taşınıyor. Burada siliniyor.
         self.cardViews.removeAll(where: { view == $0 })
 
         guard let user = topCardView?.viewModel.user else { return }
@@ -172,9 +223,6 @@ extension HomeController: CardViewDelegate {
         present(controller,animated: true,completion: nil)
     }
 }
-    
-
-    
    // MARK: - BottomControlsStackViewDelegate
 
 extension HomeController: BottomControlsStackViewDelegate {
@@ -201,20 +249,23 @@ extension HomeController: BottomControlsStackViewDelegate {
     }
     
 }
-
+    
     // MARK: - ProfileControllerDelegate
 
 extension HomeController: ProfileControllerDelegate {
     func profileController(_ controller: ProfileController, didLikeUser user: User) {
         controller.dismiss(animated: true, completion: nil)
+        perfomSwipeAnimation(shouldLike: true)
+        self.saveSwipeAndCheckForMatch(forUser: user, didLike: true )
     }
     
     func profileController(_ controller: ProfileController, didDislikeUser user: User) {
         controller.dismiss(animated: true, completion: nil)
+        perfomSwipeAnimation(shouldLike: false)
+        Service.saveSwipe(forUser: user, isLike: false, completion: nil)
     }
     
 }
-    
 
     // MARK: - AuthenticationDelegate
 

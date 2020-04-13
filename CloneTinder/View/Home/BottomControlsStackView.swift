@@ -1,5 +1,5 @@
 //
-//  BottomControlsStackvİEW.swift
+//  BottomControlsStackView.swift
 //  TinderClone
 //
 //  Created by Alperen Toksöz on 1.04.2020.

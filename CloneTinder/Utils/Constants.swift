@@ -2,7 +2,7 @@
 //  Constants.swift
 //  TinderCloneFinal
 //
-//  Created by Alperen Toksöz on 2.06.2020.
+//  Created by Alperen Toksöz on 3.04.2020.
 //  Copyright © 2020 Alperen Toksöz. All rights reserved.
 //
 
