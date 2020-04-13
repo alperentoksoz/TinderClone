@@ -24,7 +24,6 @@
 		04A6D7BA249BB1F10082CF48 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D7B9249BB1F10082CF48 /* AuthService.swift */; };
 		04A6D7BC249BB23D0082CF48 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D7BB249BB23D0082CF48 /* Service.swift */; };
 		04A6D7BE249BB25D0082CF48 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D7BD249BB25D0082CF48 /* Constants.swift */; };
-		04A6D7C0249BEA0C0082CF48 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04A6D7BF249BEA0C0082CF48 /* GoogleService-Info.plist */; };
 		04A6D7C9249BEB150082CF48 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D7C8249BEB150082CF48 /* SettingsController.swift */; };
 		04A6D7CD249BEE400082CF48 /* SettingsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D7CC249BEE400082CF48 /* SettingsHeader.swift */; };
 		04A6D7CF249BF0370082CF48 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6D7CE249BF0370082CF48 /* SettingsCell.swift */; };
@@ -66,7 +65,6 @@
 		04A6D7B9249BB1F10082CF48 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		04A6D7BB249BB23D0082CF48 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		04A6D7BD249BB25D0082CF48 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		04A6D7BF249BEA0C0082CF48 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04A6D7C8249BEB150082CF48 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		04A6D7CC249BEE400082CF48 /* SettingsHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsHeader.swift; path = ../../../../ArtBookProject/TinderCloneFinal/TinderCloneFinal/View/Settings/SettingsHeader.swift; sourceTree = "<group>"; };
 		04A6D7CE249BF0370082CF48 /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsCell.swift; path = ../../../../ArtBookProject/TinderCloneFinal/TinderCloneFinal/View/Settings/SettingsCell.swift; sourceTree = "<group>"; };
@@ -133,7 +131,6 @@
 				04A6D7342496D7240082CF48 /* Utils */,
 				04A6D7202496D71A0082CF48 /* AppDelegate.swift */,
 				04A6D7222496D71A0082CF48 /* SceneDelegate.swift */,
-				04A6D7BF249BEA0C0082CF48 /* GoogleService-Info.plist */,
 				04A6D7262496D71A0082CF48 /* Main.storyboard */,
 				04A6D7292496D71D0082CF48 /* Assets.xcassets */,
 				04A6D72B2496D71D0082CF48 /* LaunchScreen.storyboard */,
@@ -350,7 +347,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				04A6D72D2496D71D0082CF48 /* LaunchScreen.storyboard in Resources */,
-				04A6D7C0249BEA0C0082CF48 /* GoogleService-Info.plist in Resources */,
 				04A6D72A2496D71D0082CF48 /* Assets.xcassets in Resources */,
 				04A6D7282496D71A0082CF48 /* Main.storyboard in Resources */,
 			);
